@@ -17,6 +17,7 @@ group :development, :test do
 end
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem 'seed_dump'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -29,8 +30,12 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'country_select'
+gem 'datagrid'
+
 group :development do
   gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'guard-rspec'

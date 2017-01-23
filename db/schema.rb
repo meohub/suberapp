@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121192039) do
+ActiveRecord::Schema.define(version: 20170122021406) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name",         limit: 120
+    t.string   "surname",      limit: 120
+    t.string   "phone_number", limit: 16
+    t.string   "email",        limit: 240
+    t.string   "address",      limit: 240
+    t.string   "city",         limit: 120
+    t.string   "zip",          limit: 16
+    t.string   "state",        limit: 120
+    t.string   "country",      limit: 2
+    t.text     "notes"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["email"], name: "index_contacts_on_email"
+    t.index ["name"], name: "index_contacts_on_name"
+    t.index ["surname"], name: "index_contacts_on_surname"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
