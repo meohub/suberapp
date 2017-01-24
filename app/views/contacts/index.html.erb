@@ -1,4 +1,5 @@
 <%= datagrid_form_for @grid, :method => :get, :url => contacts_path %>
+<%= link_to "New", new_contact_path, class: "datagrid-submit" %>
 
 <%= paginate(@grid.assets) %>
 <%= datagrid_table @grid %>
