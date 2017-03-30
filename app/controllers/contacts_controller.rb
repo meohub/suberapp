@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  validates :name, presence: true, length: {maximum: 80}
+  validates :surname, presence: true, length: {maximum: 80}
+  validates :phone_number, presence: true, length: {maximum: 16}, numericality:  { only_integer: true }
 
   def index
     @grid = ContactsGrid.new(params[:contacts_grid]) do |scope|
