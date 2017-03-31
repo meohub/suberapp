@@ -13,7 +13,7 @@ class ContactsGrid
   filter(:email, :string) { |value| where('email like ?', "%#{value}%") }
   filter(:notes) { |value| where('notes like ?', "%#{value}%") }
 
-  column(:id)
+    column(:id)
   column(:name)
   column(:surname)
   column(:phone_number)
