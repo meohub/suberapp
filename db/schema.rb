@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122021406) do
+ActiveRecord::Schema.define(version: 20170331000813) do
 
   create_table "contacts", force: :cascade do |t|
     t.string   "name",         limit: 120
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20170122021406) do
     t.index ["invitations_count"], name: "index_users_on_invitations_count"
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "workshops", force: :cascade do |t|
+    t.text     "title"
+    t.integer  "contact_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_workshops_on_contact_id"
   end
 
 end

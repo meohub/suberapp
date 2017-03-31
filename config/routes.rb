@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :workshops
   resources :contacts
 
   namespace :admin do
