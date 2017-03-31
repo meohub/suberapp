@@ -40,38 +40,38 @@ User.create!([
                  }
              ])
 
-# Fill up the contacts table with lovely people
-Contact.create!(
-    name: "Mehmet",
-    surname: "Ozgul",
-    phone_number: "4044140010",
-    email: "lemehmet@gmail.com",
-    address: "116 Pattillo Way",
-    city: "Decatur",
-    zip: "30030",
-    state: "GA",
-    country: "USA",
-    notes: "A very fantastic person",
-    created_at: Time.zone.now,
-    updated_at: Time.zone.now
-)
-
-#Required by the Faker
-# I18n.reload!
-
-500.times do |n|
-
-  Contact.create(
-      name: Faker::Name.first_name,
-      surname: Faker::Name.last_name,
-      phone_number: Faker::PhoneNumber.phone_number,
-      email: Faker::Internet.email,
-      address: Faker::Address.street_address,
-      city: Faker::Address.city,
-      zip: Faker::Address.zip_code,
-      state: Faker::Address.state_abbr.to_s,
-      country: "USA",
-      notes: Faker::ChuckNorris.fact
-  )
-end
+# # Fill up the contacts table with lovely people
+# Contact.create!(
+#     name: "Mehmet",
+#     surname: "Ozgul",
+#     phone_number: "4044140010",
+#     email: "lemehmet@gmail.com",
+#     address: "668 Fantastic Rd",
+#     city: "Fairland",
+#     zip: "12345",
+#     state: "GA",
+#     country: "USA",
+#     notes: "A very fantastic person",
+#     created_at: Time.zone.now,
+#     updated_at: Time.zone.now
+# )
+#
+# #Required by the Faker
+# # I18n.reload!
+#
+# 500.times do |n|
+#
+#   Contact.create(
+#       name: Faker::Name.first_name,
+#       surname: Faker::Name.last_name,
+#       phone_number: Faker::PhoneNumber.phone_number,
+#       email: Faker::Internet.email,
+#       address: Faker::Address.street_address,
+#       city: Faker::Address.city,
+#       zip: Faker::Address.zip_code,
+#       state: Faker::Address.state_abbr.to_s,
+#       country: "USA",
+#       notes: Faker::ChuckNorris.fact
+#   )
+# end
 
