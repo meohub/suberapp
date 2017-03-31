@@ -1,29 +1,6 @@
-<p id="notice"><%= notice %></p>
+<%= datagrid_form_for @grid, :method => :get, :url => workshops_path %>
+<%= link_to "New", new_workshop_path, class: "datagrid-submit" %>
 
-<h1>Workshops</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Contact</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @workshops.each do |workshop| %>
-      <tr>
-        <td><%= workshop.title %></td>
-        <td><%= workshop.contact %></td>
-        <td><%= link_to 'Show', workshop %></td>
-        <td><%= link_to 'Edit', edit_workshop_path(workshop) %></td>
-        <td><%= link_to 'Destroy', workshop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Workshop', new_workshop_path %>
+<%= paginate(@grid.assets) %>
+<%= datagrid_table @grid %>
+<%= paginate(@grid.assets) %>

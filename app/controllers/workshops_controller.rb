@@ -1,10 +1,12 @@
 class WorkshopsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_workshop, only: [:show, :edit, :update, :destroy]
 
   # GET /workshops
-  # GET /workshops.json
   def index
-    @workshops = Workshop.all
+    @grid = WorkshopsGrid.new(params[:workshops_grid]) do |scope|
+      scope.page(params[:page])
+    end
   end
 
   # GET /workshops/1

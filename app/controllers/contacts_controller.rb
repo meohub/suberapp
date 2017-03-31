@@ -2,6 +2,7 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
+  # GET /contacts
   def index
     @grid = ContactsGrid.new(params[:contacts_grid]) do |scope|
       scope.page(params[:page])
